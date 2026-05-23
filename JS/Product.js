@@ -491,6 +491,10 @@ const listOfElectronicDevices = [
 const listOfClothes = [C01, C02, C03, C04, C05, C06, C07, C08, C09, C10];
 const listOfSportEquipments = [S01, S02, S03, S04, S05, S06, S07, S08, S09];
 const listOfBooks = [B01, B02, B03, B04, B05, B06, B07, B08, B09, B10, B11];
+const ElectronicDevices = "Thiết bị điện tử";
+const Clothes = "Quần áo";
+const SportEquipments = "Dụng cụ thể thao";
+const Books = "Sách";
 function countProduct() {
   const numberOfElectronicDevices = document.getElementById(
     "numberOfElectronicDevices",
@@ -569,104 +573,99 @@ function fillproductdiscountprice() {
     }
   }
 }
-
+function selectEtype() {
+  for (let i = 0; i < listOfElectronicDevices.length; i++) {
+    const Cproduct = document.getElementById(
+      listOfElectronicDevices[i].idProduct,
+    );
+    Cproduct.style.display = "flex";
+  }
+  for (let i = 0; i < listOfClothes.length; i++) {
+    const Cproduct = document.getElementById(listOfClothes[i].idProduct);
+    Cproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfSportEquipments.length; i++) {
+    const Sproduct = document.getElementById(
+      listOfSportEquipments[i].idProduct,
+    );
+    Sproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfBooks.length; i++) {
+    const Bproduct = document.getElementById(listOfBooks[i].idProduct);
+    Bproduct.style.display = "none";
+  }
+}
+function selectCtype() {
+  for (let i = 0; i < listOfClothes.length; i++) {
+    const Cproduct = document.getElementById(listOfClothes[i].idProduct);
+    Cproduct.style.display = "flex";
+  }
+  for (let i = 0; i < listOfElectronicDevices.length; i++) {
+    const Cproduct = document.getElementById(
+      listOfElectronicDevices[i].idProduct,
+    );
+    Cproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfSportEquipments.length; i++) {
+    const Sproduct = document.getElementById(
+      listOfSportEquipments[i].idProduct,
+    );
+    Sproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfBooks.length; i++) {
+    const Bproduct = document.getElementById(listOfBooks[i].idProduct);
+    Bproduct.style.display = "none";
+  }
+}
+function selectStype() {
+  for (let i = 0; i < listOfSportEquipments.length; i++) {
+    const Cproduct = document.getElementById(
+      listOfSportEquipments[i].idProduct,
+    );
+    Cproduct.style.display = "flex";
+  }
+  for (let i = 0; i < listOfClothes.length; i++) {
+    const Cproduct = document.getElementById(listOfClothes[i].idProduct);
+    Cproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfElectronicDevices.length; i++) {
+    const Sproduct = document.getElementById(
+      listOfElectronicDevices[i].idProduct,
+    );
+    Sproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfBooks.length; i++) {
+    const Bproduct = document.getElementById(listOfBooks[i].idProduct);
+    Bproduct.style.display = "none";
+  }
+}
+function selectBtype() {
+  for (let i = 0; i < listOfBooks.length; i++) {
+    const Cproduct = document.getElementById(listOfBooks[i].idProduct);
+    Cproduct.style.display = "flex";
+  }
+  for (let i = 0; i < listOfClothes.length; i++) {
+    const Cproduct = document.getElementById(listOfClothes[i].idProduct);
+    Cproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfSportEquipments.length; i++) {
+    const Sproduct = document.getElementById(
+      listOfSportEquipments[i].idProduct,
+    );
+    Sproduct.style.display = "none";
+  }
+  for (let i = 0; i < listOfElectronicDevices.length; i++) {
+    const Bproduct = document.getElementById(
+      listOfElectronicDevices[i].idProduct,
+    );
+    Bproduct.style.display = "none";
+  }
+}
 function selectProduct() {
   const Etype = document.getElementById("typeE");
   const Ctype = document.getElementById("typeC");
   const Stype = document.getElementById("typeS");
   const Btype = document.getElementById("typeB");
-
-  function selectEtype() {
-    for (let i = 0; i < listOfElectronicDevices.length; i++) {
-      const Cproduct = document.getElementById(
-        listOfElectronicDevices[i].idProduct,
-      );
-      Cproduct.style.display = "flex";
-    }
-    for (let i = 0; i < listOfClothes.length; i++) {
-      const Cproduct = document.getElementById(listOfClothes[i].idProduct);
-      Cproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfSportEquipments.length; i++) {
-      const Sproduct = document.getElementById(
-        listOfSportEquipments[i].idProduct,
-      );
-      Sproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfBooks.length; i++) {
-      const Bproduct = document.getElementById(listOfBooks[i].idProduct);
-      Bproduct.style.display = "none";
-    }
-  }
-
-  function selectCtype() {
-    for (let i = 0; i < listOfClothes.length; i++) {
-      const Cproduct = document.getElementById(listOfClothes[i].idProduct);
-      Cproduct.style.display = "flex";
-    }
-    for (let i = 0; i < listOfElectronicDevices.length; i++) {
-      const Cproduct = document.getElementById(
-        listOfElectronicDevices[i].idProduct,
-      );
-      Cproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfSportEquipments.length; i++) {
-      const Sproduct = document.getElementById(
-        listOfSportEquipments[i].idProduct,
-      );
-      Sproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfBooks.length; i++) {
-      const Bproduct = document.getElementById(listOfBooks[i].idProduct);
-      Bproduct.style.display = "none";
-    }
-  }
-
-  function selectStype() {
-    for (let i = 0; i < listOfSportEquipments.length; i++) {
-      const Cproduct = document.getElementById(
-        listOfSportEquipments[i].idProduct,
-      );
-      Cproduct.style.display = "flex";
-    }
-    for (let i = 0; i < listOfClothes.length; i++) {
-      const Cproduct = document.getElementById(listOfClothes[i].idProduct);
-      Cproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfElectronicDevices.length; i++) {
-      const Sproduct = document.getElementById(
-        listOfElectronicDevices[i].idProduct,
-      );
-      Sproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfBooks.length; i++) {
-      const Bproduct = document.getElementById(listOfBooks[i].idProduct);
-      Bproduct.style.display = "none";
-    }
-  }
-
-  function selectBtype() {
-    for (let i = 0; i < listOfBooks.length; i++) {
-      const Cproduct = document.getElementById(listOfBooks[i].idProduct);
-      Cproduct.style.display = "flex";
-    }
-    for (let i = 0; i < listOfClothes.length; i++) {
-      const Cproduct = document.getElementById(listOfClothes[i].idProduct);
-      Cproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfSportEquipments.length; i++) {
-      const Sproduct = document.getElementById(
-        listOfSportEquipments[i].idProduct,
-      );
-      Sproduct.style.display = "none";
-    }
-    for (let i = 0; i < listOfElectronicDevices.length; i++) {
-      const Bproduct = document.getElementById(
-        listOfElectronicDevices[i].idProduct,
-      );
-      Bproduct.style.display = "none";
-    }
-  }
 
   Etype.addEventListener("click", () => selectEtype());
   Ctype.addEventListener("click", () => selectCtype());
@@ -706,6 +705,31 @@ function productdetail(id_product) {
 function closedetail() {
   const detail = document.getElementById("product__detail");
   detail.style.display = "none";
+}
+
+function search() {
+  const search__input = document.getElementById("header__search--input");
+
+  const search__information = search__input.value;
+  if (
+    ElectronicDevices.toLocaleLowerCase().includes(
+      search__information.toLocaleLowerCase(),
+    )
+  )
+    selectEtype();
+  else if (
+    Clothes.toLocaleLowerCase().includes(
+      search__information.toLocaleLowerCase(),
+    )
+  )
+    selectCtype();
+  else if (
+    SportEquipments.toLocaleLowerCase().includes(
+      search__information.toLocaleLowerCase(),
+    )
+  )
+    selectStype();
+  else selectBtype();
 }
 
 countProduct();
