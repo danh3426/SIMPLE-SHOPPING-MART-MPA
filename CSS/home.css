@@ -17,6 +17,7 @@ body {
 .header__information {
     display: flex;
     position: sticky;
+    top: 0px;
     font-size: 25px;
     justify-content: space-around;
     align-items: center;
@@ -365,7 +366,7 @@ body {
     grid-template-rows: repeat(10, fit-content);
     gap: 10px;
     width: fit-content;
-    height: 80vh;
+    height: 84.2vh;
     justify-content: end;
     margin-left: 5vw;
     overflow-y: auto;
