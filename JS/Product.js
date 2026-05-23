@@ -732,6 +732,25 @@ function search() {
   else selectBtype();
 }
 
+function countproductinshowcart(id_product) {
+  const currentUser = window.localStorage.getItem("currentUser");
+  if (currentUser === null)
+    alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!!!");
+  else {
+    const idproduct = id_product.split("__")[0];
+    const numberofproductinshowcart = document.getElementById(
+      "header__numberInShowCart",
+    );
+    const addproduct = findProduct(idproduct, listOfProduct);
+    let productList = JSON.parse(window.localStorage.getItem("productList"));
+    if (productList === null) productList = [];
+    productList.push(addproduct);
+    numberofproductinshowcart.textContent = productList.length;
+    window.localStorage.setItem("productList", JSON.stringify(productList));
+    alert("Bạn đã thêm vào giỏ hàng thành công!!!");
+  }
+}
+
 countProduct();
 fillproductname();
 fillproductimage();
