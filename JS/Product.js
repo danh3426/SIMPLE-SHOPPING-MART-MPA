@@ -264,7 +264,7 @@ const S01 = new Product(
   "5.0",
   650000,
   0.1,
-  10,
+  0,
   true,
 );
 const S02 = new Product(
@@ -750,12 +750,15 @@ function addproducttoshowcart(id_product) {
   else {
     const idproduct = id_product.split("__")[0];
     const addproduct = findProduct(idproduct, listOfProduct);
-    let productList = JSON.parse(window.localStorage.getItem("productList"));
-    if (productList === null) productList = [];
-    productList.push(addproduct);
-    productinshowcart(productList);
-    window.localStorage.setItem("productList", JSON.stringify(productList));
-    alert("Bạn đã thêm vào giỏ hàng thành công!!!!");
+    if (addproduct.nums === 0) alert("Sản phẩm hiện tại đã hết hàng!!!");
+    else {
+      let productList = JSON.parse(window.localStorage.getItem("productList"));
+      if (productList === null) productList = [];
+      productList.push(addproduct);
+      productinshowcart(productList);
+      window.localStorage.setItem("productList", JSON.stringify(productList));
+      alert("Bạn đã thêm vào giỏ hàng thành công!!!!");
+    }
   }
 }
 
