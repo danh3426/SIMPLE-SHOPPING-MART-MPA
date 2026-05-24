@@ -751,7 +751,7 @@ function addproducttoshowcart(id_product) {
     productList.push(addproduct);
     productinshowcart(productList);
     window.localStorage.setItem("productList", JSON.stringify(productList));
-    alert("Bạn đã thêm vào giỏ hàng thành công!!!");
+    alert("Bạn đã thêm vào giỏ hàng thành công!!!!");
   }
 }
 
