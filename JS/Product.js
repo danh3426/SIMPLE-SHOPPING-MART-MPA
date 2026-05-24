@@ -759,7 +759,7 @@ function amountofproductinshowcart() {
   const numbers = document.getElementById("header__numberInShowCart");
   let productList = JSON.parse(window.localStorage.getItem("productList"));
   if (productList === null) productList = [];
-  nums.textContent = productList.length;
+  numbers.textContent = productList.length;
 }
 
 countProduct();
