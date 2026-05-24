@@ -41,8 +41,8 @@ const E01 = new Product(
   "Samsung Galaxy S26 Ultra",
   "image/SamsungGalaxyS26Ultra.jpg",
   "5.0",
-  30490000,
-  0.1,
+  50490000,
+  0,
   40,
   true,
 );
@@ -729,7 +729,11 @@ function search() {
     )
   )
     selectStype();
-  else selectBtype();
+  else if (
+    Books.toLocaleLowerCase().includes(search__information.toLocaleLowerCase())
+  )
+    selectBtype();
+  else alert("Không tìm thấy sản phẩm phù hợp!!");
 }
 
 function productinshowcart(productList) {
@@ -756,10 +760,14 @@ function addproducttoshowcart(id_product) {
 }
 
 function amountofproductinshowcart() {
-  const numbers = document.getElementById("header__numberInShowCart");
-  let productList = JSON.parse(window.localStorage.getItem("productList"));
-  if (productList === null) productList = [];
-  numbers.textContent = productList.length;
+  const currentUser = JSON.parse(window.localStorage.getItem("currentUser"));
+  if (currentUser === null) return;
+  else {
+    const numbers = document.getElementById("header__numberInShowCart");
+    let productList = JSON.parse(window.localStorage.getItem("productList"));
+    if (productList === null) productList = [];
+    numbers.textContent = productList.length;
+  }
 }
 
 countProduct();
