@@ -755,9 +755,17 @@ function addproducttoshowcart(id_product) {
   }
 }
 
+function amountofproductinshowcart() {
+  const nums = document.getElementById("header__numberInShowCart");
+  let productList = JSON.parse(window.localStorage.getItem("productList"));
+  if (productList === null) productList = [];
+  nums.textContent = productList.length;
+}
+
 countProduct();
 fillproductname();
 fillproductimage();
 fillproductlistprice();
 fillproductdiscountprice();
 selectProduct();
+amountofproductinshowcart();
